@@ -1,17 +1,24 @@
-import { Reapp, React, NestedViewList, View, Button } from 'reapp-kit';
+import { Reapp, React, NestedViewList, View, Button, Container } from 'reapp-kit';
+
+class StartButton extends React.Component {
+  render() {
+    return (
+      <Container pad wrap>
+        <Button onTap={() => this.router().transitionTo('sub')}>
+          Start
+        </Button>
+      </Container>
+    );
+  }
+}
 
 class Home extends React.Component {
   render() {
     return (
       <NestedViewList {...this.props.viewListProps}>
-        <View title="myapp">
+        <View title="MyApp" after={<StartButton />}>
           <p>Hello, World!</p>
-
-          <Button onTap={() => this.router().transitionTo('sub')}>
-            Go to sub view
-          </Button>
         </View>
-
         {this.props.child()}
       </NestedViewList>
     );

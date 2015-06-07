@@ -1,0 +1,18 @@
+.my-display {
+  height: 200px;
+  text-align: center;
+  border: 1px solid;
+}
+.my-list {
+  height: 200px;
+  overflow-y: auto;
+}
+.my-item {
+  width: 50%;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.item {
+
+}

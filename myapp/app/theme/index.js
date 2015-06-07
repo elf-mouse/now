@@ -3,6 +3,8 @@ import iOS from 'reapp-kit/themes/ios';
 import components from './constants/components';
 import styles from './styles';
 
+import './main.css';
+
 theme({
   constants: [
     iOS.constants.base,
