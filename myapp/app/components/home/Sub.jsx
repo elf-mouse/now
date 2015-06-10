@@ -4,30 +4,35 @@ function imageRequire(name) {
   return require('../../../assets/shared/sprite-' + name + '.png');
 }
 
-var Images = ['chrono', 'drapeaux', 'f1', 'jeu', 'peinture'].map(imageRequire);
+let Images = ['drapeaux', 'chrono', 'f1', 'peinture', 'jeu'].map(imageRequire);
 
 class Display extends React.Component {
   render() {
     return (
-      <div className="my-display">Display</div>
+      <div className="my-display-wrap">
+        <div className="my-display" style={{
+          'background-image': 'url(' + Images[this.props.active] + ')',
+          'background-repeat': 'no-repeat'
+        }}>
+        </div>
+      </div>
     );
   }
 }
 
 class Item extends React.Component {
-  constructor(...props) {
-    super(...props);
-  }
-
   handleClick() {
-    //this.props.changeItem(this.props.key);
+    this.props.changeItem(this.props.index);
   }
 
   render() {
-    var className = 'my-item item-' + this.props.key;
+    let className = 'my-item item-' + this.props.index;
+    if (this.props.active) {
+      className += ' active';
+    }
     return (
       <div className={className} onClick={this.handleClick.bind(this)}>
-        {this.props.name}
+        {this.props.index}
       </div>
     );
   }
@@ -41,35 +46,40 @@ var SubPageComponent = class SubPage extends React.Component {
     };
   }
 
+  changeItem(index) {
+    this.setState({
+      activeIndex: index
+    });
+  }
+
+  getItems(activeIndex) {
+    let changeItem = this.changeItem.bind(this);
+
+    return Images.map((value, key) => {
+      return <Item key={key}
+                   name={value}
+                   active={key===activeIndex}
+                   changeItem={changeItem} />
+    });
+  }
+
   render() {
     const backButton =
       <BackButton onTap={() => window.history.back()} />
 
+    let activeIndex = this.state.activeIndex;
+
     return (
       <View {...this.props} title="Sub Page" titleLeft={backButton}>
-        <Display />
+        <Display active={activeIndex}/>
         <div className="my-list">
           <Container>
-            {Images.map(function(value, key) {
-              return (
-                <Item key={key}
-                     value={value}
-                     name={"Item " + (key + 1)}
-                     changeItem={this.changeItem.bind(this)} />
-              );
-            })}
+            {this.getItems(activeIndex)}
           </Container>
         </div>
       </View>
     );
   }
 }
-
-SubPage.changeItem = function(index) {
-  this.setState({
-    activeIndex: index
-  });
-  console.log(this.state.index);
-};
 
 export default SubPageComponent;
