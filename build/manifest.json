@@ -8,9 +8,5 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html?launcher=true",
-  "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#0096ff",
-  "background_color": "#fff"
+  "start_url": "/now/build/index.html?launcher=true"
 }
