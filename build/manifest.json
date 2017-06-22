@@ -3,10 +3,10 @@
   "name": "Create React PWApp",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "logo-144x144.png",
+      "sizes": "144x144",
       "type": "image/png"
     }
   ],
-  "start_url": "/now/build/index.html?launcher=true"
+  "start_url": "./"
 }
