@@ -8,6 +8,9 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./",
-  "display": "standalone"
+  "start_url": "./#pwa=true",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0096ff",
+  "background_color": "#fff"
 }
