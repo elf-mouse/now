@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": "https://elf-mouse.github.io/now/pwa/",
+  "start_url": "/now/pwa/",
   "icons": [
     {
       "src": "https://elf-mouse.github.io/now/pwa/img/icons/icon-72x72.png",
