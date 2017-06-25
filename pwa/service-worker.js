@@ -1,1 +1,80 @@
-"use strict";function setOfCachedUrls(e){return e.keys().then(function(e){return e.map(function(e){return e.url})}).then(function(e){return new Set(e)})}var precacheConfig=[["https://elf-mouse.github.io/now/pwa/css/main.css","79136140738d2a36dd6ac1b762bf766b"],["https://elf-mouse.github.io/now/pwa/img/logo.svg","005d8bd132992d6c6530b0e968ec5f70"],["https://elf-mouse.github.io/now/pwa/js/main.js","b209c25f7c139132c9c9e4fcaa2236a2"]],cacheName="sw-precache-v3-balm-"+(self.registration?self.registration.scope:""),ignoreUrlParametersMatching=[/^utm_/],addDirectoryIndex=function(e,t){var n=new URL(e);return"/"===n.pathname.slice(-1)&&(n.pathname+=t),n.toString()},cleanResponse=function(e){return e.redirected?("body"in e?Promise.resolve(e.body):e.blob()).then(function(t){return new Response(t,{headers:e.headers,status:e.status,statusText:e.statusText})}):Promise.resolve(e)},createCacheKey=function(e,t,n,r){var a=new URL(e);return r&&a.pathname.match(r)||(a.search+=(a.search?"&":"")+encodeURIComponent(t)+"="+encodeURIComponent(n)),a.toString()},isPathWhitelisted=function(e,t){if(0===e.length)return!0;var n=new URL(t).pathname;return e.some(function(e){return n.match(e)})},stripIgnoredUrlParameters=function(e,t){var n=new URL(e);return n.hash="",n.search=n.search.slice(1).split("&").map(function(e){return e.split("=")}).filter(function(e){return t.every(function(t){return!t.test(e[0])})}).map(function(e){return e.join("=")}).join("&"),n.toString()},hashParamName="_sw-precache",urlsToCacheKeys=new Map(precacheConfig.map(function(e){var t=e[0],n=e[1],r=new URL(t,self.location),a=createCacheKey(r,hashParamName,n,/\.\w{8}\./);return[r.toString(),a]}));self.addEventListener("install",function(e){e.waitUntil(caches.open(cacheName).then(function(e){return setOfCachedUrls(e).then(function(t){return Promise.all(Array.from(urlsToCacheKeys.values()).map(function(n){if(!t.has(n)){var r=new Request(n,{credentials:"same-origin"});return fetch(r).then(function(t){if(!t.ok)throw new Error("Request for "+n+" returned a response with status "+t.status);return cleanResponse(t).then(function(t){return e.put(n,t)})})}}))})}).then(function(){return self.skipWaiting()}))}),self.addEventListener("activate",function(e){var t=new Set(urlsToCacheKeys.values());e.waitUntil(caches.open(cacheName).then(function(e){return e.keys().then(function(n){return Promise.all(n.map(function(n){if(!t.has(n.url))return e.delete(n)}))})}).then(function(){return self.clients.claim()}))}),self.addEventListener("fetch",function(e){if("GET"===e.request.method){var t,n=stripIgnoredUrlParameters(e.request.url,ignoreUrlParametersMatching);(t=urlsToCacheKeys.has(n))||(n=addDirectoryIndex(n,"index.html"),t=urlsToCacheKeys.has(n));!t&&"navigate"===e.request.mode&&isPathWhitelisted([],e.request.url)&&(n=new URL("https://elf-mouse.github.io/now/pwa/index.html",self.location).toString(),t=urlsToCacheKeys.has(n)),t&&e.respondWith(caches.open(cacheName).then(function(e){return e.match(urlsToCacheKeys.get(n)).then(function(e){if(e)return e;throw Error("The cached response that was expected is missing.")})}).catch(function(t){return console.warn('Couldn\'t serve response for "%s" from cache: %O',e.request.url,t),fetch(e.request)}))}});
+importScripts('workbox-sw.prod.v1.0.1.js');
+
+/**
+ * DO NOT EDIT THE FILE MANIFEST ENTRY
+ *
+ * The method precache() does the following:
+ * 1. Cache URLs in the manifest to a local cache.
+ * 2. When a network request is made for any of these URLs the response
+ *    will ALWAYS comes from the cache, NEVER the network.
+ * 3. When the service worker changes ONLY assets with a revision change are
+ *    updated, old cache entries are left as is.
+ *
+ * By changing the file manifest manually, your users may end up not receiving
+ * new versions of files because the revision hasn't changed.
+ *
+ * Please use workbox-build or some other tool / approach to generate the file
+ * manifest which accounts for changes to local files and update the revision
+ * accordingly.
+ */
+const fileManifest = [
+  {
+    "url": "favicon.ico",
+    "revision": "29e32bd79c18993464e8600b7e8fa5a4"
+  },
+  {
+    "url": "index.html",
+    "revision": "d065c2dd8b4d3bcc5d5ae9785a74d8ef"
+  },
+  {
+    "url": "manifest.json",
+    "revision": "255ab670f1a6254f63101e21f17d87e7"
+  },
+  {
+    "url": "/now/pwa/css/main.css",
+    "revision": "79136140738d2a36dd6ac1b762bf766b"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-128x128.png",
+    "revision": "1151213fcf0cb1779eaeb963200245d9"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-144x144.png",
+    "revision": "7d59720df6e6fa8695f09b9f216c4bb8"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-152x152.png",
+    "revision": "dcac42b628cc9bd84e61095b5a134cd8"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-192x192.png",
+    "revision": "0650ea22d2eb9a6a132c050e60a45384"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-384x384.png",
+    "revision": "7c84a974f1ca4ad57006718fa11a7e0d"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-512x512.png",
+    "revision": "7c84a974f1ca4ad57006718fa11a7e0d"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-72x72.png",
+    "revision": "ac818cf626e46b17ae0cbd7dff966198"
+  },
+  {
+    "url": "/now/pwa/img/icons/icon-96x96.png",
+    "revision": "f321ccabb0c3df38bc3b8de1fc62dd1b"
+  },
+  {
+    "url": "/now/pwa/img/logo.svg",
+    "revision": "005d8bd132992d6c6530b0e968ec5f70"
+  },
+  {
+    "url": "/now/pwa/js/main.js",
+    "revision": "5928c7e89b46a72e2bbf49d73a34435e"
+  }
+];
+
+const workboxSW = new self.WorkboxSW();
+workboxSW.precache(fileManifest);
