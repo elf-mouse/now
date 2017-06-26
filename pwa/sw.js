@@ -1,33 +1,20 @@
-importScripts('workbox-sw.prod.v1.0.1.js');
+importScripts('workbox-sw.prod.js');
 
-/**
- * DO NOT EDIT THE FILE MANIFEST ENTRY
- *
- * The method precache() does the following:
- * 1. Cache URLs in the manifest to a local cache.
- * 2. When a network request is made for any of these URLs the response
- *    will ALWAYS comes from the cache, NEVER the network.
- * 3. When the service worker changes ONLY assets with a revision change are
- *    updated, old cache entries are left as is.
- *
- * By changing the file manifest manually, your users may end up not receiving
- * new versions of files because the revision hasn't changed.
- *
- * Please use workbox-build or some other tool / approach to generate the file
- * manifest which accounts for changes to local files and update the revision
- * accordingly.
- */
-const fileManifest = [
+// Create Workbox service worker instance
+const workboxSW = new self.WorkboxSW();
+
+// Placeholder array which is populated automatically by workboxBuild.injectManifest()
+workboxSW.precache([
   {
-    "url": "favicon.ico",
+    "url": "/favicon.ico",
     "revision": "29e32bd79c18993464e8600b7e8fa5a4"
   },
   {
-    "url": "index.html",
-    "revision": "d065c2dd8b4d3bcc5d5ae9785a74d8ef"
+    "url": "/index.html",
+    "revision": "e175c679f3416fb1de1e25e8134b1baa"
   },
   {
-    "url": "manifest.json",
+    "url": "/manifest.json",
     "revision": "255ab670f1a6254f63101e21f17d87e7"
   },
   {
@@ -72,9 +59,22 @@ const fileManifest = [
   },
   {
     "url": "/now/pwa/js/main.js",
-    "revision": "5928c7e89b46a72e2bbf49d73a34435e"
+    "revision": "31f5f7bacc4be369b36085a0c46e5060"
+  },
+  {
+    "url": "/workbox-sw.prod.js",
+    "revision": "3fbc93cd82283d7c3a2cb4dcaf36be91"
   }
-];
+]);
 
-const workboxSW = new self.WorkboxSW();
-workboxSW.precache(fileManifest);
+// Receive message
+self.addEventListener('message', function(event) {
+  console.log(event.data);
+});
+
+// Send message
+self.clients.matchAll().then(function(clients) {
+  clients.forEach(function(client) {
+    client.postMessage('Service worker attached.');
+  })
+});
