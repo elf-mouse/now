@@ -6,15 +6,15 @@ const workboxSW = new self.WorkboxSW();
 // Placeholder array which is populated automatically by workboxBuild.injectManifest()
 workboxSW.precache([
   {
-    "url": "/favicon.ico",
+    "url": "/now/pwa/favicon.ico",
     "revision": "29e32bd79c18993464e8600b7e8fa5a4"
   },
   {
-    "url": "/index.html",
+    "url": "/now/pwa/index.html",
     "revision": "e175c679f3416fb1de1e25e8134b1baa"
   },
   {
-    "url": "/manifest.json",
+    "url": "/now/pwa/manifest.json",
     "revision": "255ab670f1a6254f63101e21f17d87e7"
   },
   {
@@ -62,7 +62,7 @@ workboxSW.precache([
     "revision": "31f5f7bacc4be369b36085a0c46e5060"
   },
   {
-    "url": "/workbox-sw.prod.js",
+    "url": "/now/pwa/workbox-sw.prod.js",
     "revision": "3fbc93cd82283d7c3a2cb4dcaf36be91"
   }
 ]);
