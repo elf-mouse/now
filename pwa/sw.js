@@ -1,80 +1,60 @@
-importScripts('workbox-sw.prod.js');
+importScripts('workbox-sw.js');
 
-// Create Workbox service worker instance
-const workboxSW = new self.WorkboxSW();
-
-// Placeholder array which is populated automatically by workboxBuild.injectManifest()
-workboxSW.precache([
+workbox.precaching.precacheAndRoute([
   {
-    "url": "/now/pwa/favicon.ico",
+    "url": "css/main.css",
+    "revision": "2d5a3f574504ecfa9311ebffb34d3e29"
+  },
+  {
+    "url": "favicon.ico",
     "revision": "29e32bd79c18993464e8600b7e8fa5a4"
   },
   {
-    "url": "/now/pwa/index.html",
-    "revision": "e175c679f3416fb1de1e25e8134b1baa"
+    "url": "img/icons/icon-128x128.png",
+    "revision": "f09c7e1b7e6b67217fbdbdeefa502ef4"
   },
   {
-    "url": "/now/pwa/manifest.json",
-    "revision": "255ab670f1a6254f63101e21f17d87e7"
+    "url": "img/icons/icon-144x144.png",
+    "revision": "d78676253e313534aa21661c5c5e29e5"
   },
   {
-    "url": "/now/pwa/css/main.css",
-    "revision": "79136140738d2a36dd6ac1b762bf766b"
+    "url": "img/icons/icon-152x152.png",
+    "revision": "94cadb1dc1a9d05e7dc0a64cbfe14e0b"
   },
   {
-    "url": "/now/pwa/img/icons/icon-128x128.png",
-    "revision": "1151213fcf0cb1779eaeb963200245d9"
+    "url": "img/icons/icon-192x192.png",
+    "revision": "3a8764970e2d9f1c13340218c53c26b9"
   },
   {
-    "url": "/now/pwa/img/icons/icon-144x144.png",
-    "revision": "7d59720df6e6fa8695f09b9f216c4bb8"
+    "url": "img/icons/icon-384x384.png",
+    "revision": "c8495699e3b8d02b89b271e30bd85f0e"
   },
   {
-    "url": "/now/pwa/img/icons/icon-152x152.png",
-    "revision": "dcac42b628cc9bd84e61095b5a134cd8"
+    "url": "img/icons/icon-512x512.png",
+    "revision": "cbdbb679139048e03ac977758a5c9f20"
   },
   {
-    "url": "/now/pwa/img/icons/icon-192x192.png",
-    "revision": "0650ea22d2eb9a6a132c050e60a45384"
+    "url": "img/icons/icon-72x72.png",
+    "revision": "b75809917482a05197e179f1d82dd4d5"
   },
   {
-    "url": "/now/pwa/img/icons/icon-384x384.png",
-    "revision": "7c84a974f1ca4ad57006718fa11a7e0d"
+    "url": "img/icons/icon-96x96.png",
+    "revision": "f4df1a04b681b720a77d90749524d686"
   },
   {
-    "url": "/now/pwa/img/icons/icon-512x512.png",
-    "revision": "7c84a974f1ca4ad57006718fa11a7e0d"
+    "url": "img/logo.svg",
+    "revision": "bae9298c45608e2a87e027ce96827f44"
   },
   {
-    "url": "/now/pwa/img/icons/icon-72x72.png",
-    "revision": "ac818cf626e46b17ae0cbd7dff966198"
+    "url": "index.html",
+    "revision": "9ff64ab68f6adaaadcc1673beccdc10e"
   },
   {
-    "url": "/now/pwa/img/icons/icon-96x96.png",
-    "revision": "f321ccabb0c3df38bc3b8de1fc62dd1b"
+    "url": "js/main.js",
+    "revision": "babc2f3650becb2ec17f2d048e82b738"
   },
   {
-    "url": "/now/pwa/img/logo.svg",
-    "revision": "005d8bd132992d6c6530b0e968ec5f70"
-  },
-  {
-    "url": "/now/pwa/js/main.js",
-    "revision": "31f5f7bacc4be369b36085a0c46e5060"
-  },
-  {
-    "url": "/now/pwa/workbox-sw.prod.js",
-    "revision": "3fbc93cd82283d7c3a2cb4dcaf36be91"
+    "url": "workbox-sw.js",
+    "revision": "060adeb4aef35c5028563db0c51afa34"
   }
 ]);
-
-// Receive message
-self.addEventListener('message', function(event) {
-  console.log(event.data);
-});
-
-// Send message
-self.clients.matchAll().then(function(clients) {
-  clients.forEach(function(client) {
-    client.postMessage('Service worker attached.');
-  })
-});
