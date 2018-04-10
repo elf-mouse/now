@@ -6,14 +6,15 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+workbox.core.setCacheNameDetails({
+  prefix: 'my-app',
+  suffix: 'v1'
+});
+
 workbox.precaching.precacheAndRoute([
   {
     "url": "css/main.css",
     "revision": "2d5a3f574504ecfa9311ebffb34d3e29"
-  },
-  {
-    "url": "favicon.ico",
-    "revision": "29e32bd79c18993464e8600b7e8fa5a4"
   },
   {
     "url": "img/icons/icon-128x128.png",
@@ -48,20 +49,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "f4df1a04b681b720a77d90749524d686"
   },
   {
-    "url": "img/logo.svg",
-    "revision": "bae9298c45608e2a87e027ce96827f44"
-  },
-  {
     "url": "index.html",
     "revision": "9ff64ab68f6adaaadcc1673beccdc10e"
   },
   {
     "url": "js/main.js",
-    "revision": "72377ed7ab52f9f22aa94702b4e9fadd"
-  },
-  {
-    "url": "manifest.json",
-    "revision": "4e8d33f87bdf61b06b96cdb353f8bc8e"
+    "revision": "057405708fb5bf0a1b87e33426742147"
   },
   {
     "url": "workbox-sw.js",
@@ -69,28 +62,15 @@ workbox.precaching.precacheAndRoute([
   }
 ]);
 
-// Cache Google Fonts
 workbox.routing.registerRoute(
-  new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
-  workbox.strategies.cacheFirst()
-);
-
-// Cache JavaScript and CSS
-workbox.routing.registerRoute(
-  /\.(?:js|css)$/,
-  workbox.strategies.staleWhileRevalidate()
-);
-
-// Cache Images
-workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|svg)$/,
-  workbox.strategies.cacheFirst({
-    cacheName: 'images',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
-      })
-    ]
+  /.*\.(?:png|jpg|jpeg|svg|gif)/g,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'my-image-cache'
   })
 );
+
+// Receive message
+self.addEventListener('message', function(event) {
+  console.log(event.data);
+  event.ports[0].postMessage(`SW Says 'Hello back!'`);
+});
