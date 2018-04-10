@@ -50,11 +50,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "5a3c0bd975371d4d210f0018f35406c7"
+    "revision": "be21eeee6a824b9fc860dbfc599feefc"
   },
   {
     "url": "js/main.js",
-    "revision": "4e153c465bdd0f0ea7be721330d40467"
+    "revision": "c18503635a31225db84950fd45149976"
   },
   {
     "url": "workbox-sw.js",
@@ -69,8 +69,6 @@ workbox.routing.registerRoute(
   })
 );
 
-// Receive message
 self.addEventListener('message', function(event) {
   console.log(event.data);
-  event.ports[0].postMessage(`SW Says 'Hello back!'`);
 });
