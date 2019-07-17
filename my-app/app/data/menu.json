@@ -1,0 +1,39 @@
+{
+  "code": 200,
+  "message": "OK",
+  "data": [
+    {
+      "id": 1,
+      "cover": "https://picsum.photos/320/160",
+      "pv": 1001,
+      "like": 101,
+      "subscription": 111,
+      "avatar": "https://picsum.photos/44",
+      "name": "名称1",
+      "intro": "简介1",
+      "price": 7000
+    },
+    {
+      "id": 2,
+      "cover": "https://picsum.photos/320/160",
+      "pv": 1002,
+      "like": 102,
+      "subscription": 222,
+      "avatar": "https://picsum.photos/44",
+      "name": "名称2",
+      "intro": "简介2",
+      "price": 8000
+    },
+    {
+      "id": 3,
+      "cover": "https://picsum.photos/320/160",
+      "pv": 1002,
+      "like": 103,
+      "subscription": 333,
+      "avatar": "https://picsum.photos/44",
+      "name": "名称3",
+      "intro": "简介3",
+      "price": 9000
+    }
+  ]
+}
