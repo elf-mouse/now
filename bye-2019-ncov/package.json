@@ -1,0 +1,22 @@
+{
+  "name": "bye-2019-ncov",
+  "version": "1.0.0",
+  "description": "远离病毒@wuhan2020",
+  "author": "Elf-mousE <ifmouz@gmail.com>",
+  "scripts": {
+    "dev": "gulp -S",
+    "prod": "gulp -S -p"
+  },
+  "dependencies": {
+    "zepto": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "balm": "^2.3.0",
+    "eslint": "^6.8.0",
+    "exports-loader": "^0.7.0",
+    "gulp": "^4.0.2",
+    "script-loader": "^0.7.2"
+  },
+  "private": true
+}
