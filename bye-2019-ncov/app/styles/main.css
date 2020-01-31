@@ -411,9 +411,9 @@ body {
 .circle {
   float: left;
   height: 70%;
-  width: 17.5%;
+  width: 10%;
   color: #000;
-  margin-left: 3.87%;
+  margin-left: 3%;
   border-radius: 100px;
 }
 
@@ -438,8 +438,9 @@ body {
 .item1 {
   float: center;
   height: 100%;
-  width: 78%;
+  /* width: 78%; */
   margin-left: 13%;
+  overflow: hidden;
 }
 
 .shelter {
