@@ -250,6 +250,7 @@ body {
 
 .wel_btn {
   position: absolute;
+  z-index: 11;
   bottom: 15%;
   left: 5%;
   width: 90%;

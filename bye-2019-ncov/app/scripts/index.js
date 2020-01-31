@@ -12,7 +12,7 @@ function shuffle(a) {
   return a;
 }
 
-const questions = shuffle(data);
+const questions = shuffle(data).slice(10);
 const questionsCount = questions.length;
 
 //答题流程 var
