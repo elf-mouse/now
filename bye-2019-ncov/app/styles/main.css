@@ -429,9 +429,8 @@ body {
 }
 
 .item p {
-  line-height: 0;
+  line-height: 50px;
   height: 100%;
-  margin-top: 18%;
   margin-left: -4%;
 }
 
@@ -532,8 +531,8 @@ body {
 
 .re_p {
   position: absolute;
-  width: 80%;
-  left: 10%;
+  width: 90%;
+  left: 5%;
   top: 100%;
   line-height: 25px;
   -webkit-transform: scale(0.1);
@@ -553,7 +552,7 @@ body {
 .re_btns {
   position: absolute;
   width: 100%;
-  bottom: 15%;
+  bottom: 20%;
   text-align: center;
   color: white;
 }
@@ -1014,10 +1013,6 @@ body {
 
 .ans {
   width: 100%;
-}
-
-.re_btns {
-  bottom: 25%;
 }
 
 .re_btn {
