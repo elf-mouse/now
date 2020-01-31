@@ -90,13 +90,11 @@ a {
 
 .ppp {
   color: #515151;
-  line-height: 2.6em;
+  line-height: 50px;
   text-align: center;
 }
 
 .pppp {
-  color: #040404;
-  line-height: 27px;
   text-align: center;
 }
 
@@ -176,16 +174,21 @@ body,
 html {
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(
+  /* background: -webkit-gradient(
     linear,
     0% 0%,
     0% 100%,
     color-stop(0, rgb(132, 189, 182)),
     color-stop(0.7, rgb(109, 164, 151)),
     color-stop(1, rgb(132, 189, 182))
-  );
+  ); */
   overflow: hidden;
-  color: #040404;
+  color: black;
+}
+
+body {
+  background: #1173f7 url('../images/bg1.png') no-repeat 50px top;
+  background-size: contain;
 }
 
 .global {
@@ -198,7 +201,7 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('../images/news/shequn/qingrenjie/bg.jpg');
+  /* background-image: url('../images/news/shequn/qingrenjie/bg.jpg'); */
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -211,19 +214,14 @@ html {
 }
 
 .fly_in {
-  -webkit-animation: fly_in 1.7s ease forwards;
-  -moz-animation: fly_in 1.7s ease forwards;
   animation: fly_in 1.7s ease forwards;
 }
 
 .fly_in2 {
-  -webkit-animation: fly_in 1.7s ease forwards;
-  -moz-animation: fly_in 1.7s ease forwards;
+  animation: fly_in 1.7s ease forwards;
 }
 
 .fly {
-  -webkit-animation: fly 3s ease-out infinite;
-  -moz-animation: fly 3s ease-out infinite;
   animation: fly 3s ease-out infinite;
 }
 
@@ -241,20 +239,38 @@ html {
   top: 70%;
 }
 
-.logo {
-  position: absolute;
-  width: 80%;
-  bottom: 5%;
-  left: 10%;
-}
-
 .welcome {
   width: 100%;
   height: 100%;
   display: none;
-  background-image: url('../images/news/shequn/qingrenjie/bg.jpg');
+  /* background-image: url('../images/news/shequn/qingrenjie/bg.jpg'); */
   background-size: cover;
   background-position: 50% 50%;
+}
+
+.wel_btn {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  width: 90%;
+  height: 50px;
+  background-color: #ffe400;
+  color: black;
+  border-radius: 60px;
+  font-weight: bold;
+  font-size: 24px;
+  border: 0;
+}
+
+.logo {
+  position: absolute;
+  right: 10%;
+  bottom: 4%;
+  left: 10%;
+  width: 80%;
+  height: 30px;
+  background: url('../images/logo.png') no-repeat;
+  background-size: contain;
 }
 
 .wind1 {
@@ -320,16 +336,15 @@ html {
   width: 100%;
   height: 100%;
   display: none;
-  background-image: url('../images/news/shequn/qingrenjie/bg.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
+  background: url('../images/bg2.png') no-repeat center 10%;
+  background-size: 90%;
 }
 
 .question {
   position: absolute;
-  width: 80%;
-  margin-left: 10%;
-  top: 4%;
+  width: 90%;
+  margin-left: 5%;
+  top: 0;
   z-index: 10;
 }
 
@@ -338,12 +353,12 @@ html {
   width: 75%;
   margin-left: 13%;
   margin-top: 40%;
-  font-size: 2.3em;
-  color: #427294;
+  color: black;
   height: 8.5em;
   padding-top: 0.3em;
   text-align: center;
   font-weight: bold;
+  font-size: 16px;
   background-position: bottom center;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -352,6 +367,7 @@ html {
 .ques_back {
   position: absolute;
   width: 100%;
+  margin: 10% 0;
   z-index: -1;
 }
 
@@ -372,19 +388,8 @@ html {
   float: left;
   width: 94%;
   height: 50px;
-  background-color: #f2541f;
+  background-color: #002d69;
   border-radius: 60px;
-}
-
-.wel_btn {
-  position: absolute;
-  height: 50px;
-  float: left;
-  background-color: #118b40;
-  border-radius: 60px;
-  bottom: 5%;
-  margin-left: 28%;
-  width: 42.3%;
 }
 
 .tip_btn {
@@ -392,10 +397,14 @@ html {
   height: 50px;
   bottom: 4%;
   float: left;
-  background-color: #dd2f58;
+  background-color: #7ee9ff;
   border-radius: 60px;
   margin-left: 23.5%;
   width: 52.9%;
+}
+
+.tip_btn p {
+  color: black;
 }
 
 .circle {
@@ -403,17 +412,12 @@ html {
   height: 70%;
   width: 17.5%;
   color: #000;
-  line-height: 0;
-  margin-top: 1.87%;
   margin-left: 3.87%;
-  background-color: #f2541f;
   border-radius: 100px;
 }
 
 .circle p {
-  color: #000;
-  line-height: 0;
-  margin-top: 25%;
+  line-height: 50px;
 }
 
 .item {
@@ -426,7 +430,7 @@ html {
 .item p {
   line-height: 0;
   height: 100%;
-  margin-top: 15.3%;
+  margin-top: 18%;
   margin-left: -4%;
 }
 
@@ -461,9 +465,10 @@ html {
   height: 78%;
   top: 13%;
   background-color: #ececec;
+  color: black;
   z-index: 100000;
   border-radius: 15px;
-  border: solid #15a06d 0.3em;
+  /* border: solid #15a06d 0.3em; */
 }
 
 .sh_person {
@@ -475,11 +480,11 @@ html {
 
 .sh_an {
   width: 100%;
-  color: #128a40;
+  color: black;
   font-weight: bold;
   font-size: 3.6em;
   line-height: 3em;
-  background: #fff;
+  background: #ffe400;
   border-radius: 15px 15px 0 0;
   height: 3em;
 }
@@ -519,15 +524,14 @@ html {
   width: 100%;
   height: 100%;
   display: none;
-  background-image: url('../images/news/shequn/qingrenjie/bg.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
+  background: url('../images/bg3.png') no-repeat center 10%;
+  background-size: 90%;
 }
 
 .re_p {
   position: absolute;
-  width: 70%;
-  left: 15%;
+  width: 80%;
+  left: 10%;
   top: 100%;
   line-height: 25px;
   -webkit-transform: scale(0.1);
@@ -548,15 +552,17 @@ html {
   position: absolute;
   width: 100%;
   bottom: 15%;
+  text-align: center;
+  color: white;
 }
 
 .re_btn {
-  float: left;
   height: 50px;
   width: 42.3%;
-  margin-left: 5.1%;
-  background-color: #ffc400;
   border-radius: 60px;
+  border: 0;
+  font-size: 18px;
+  color: white;
 }
 
 .re_au {
@@ -936,37 +942,9 @@ html {
   width: 100%;
   height: 100%;
   display: block;
-  background-image: url('../images/news/zt2020/2020wuhan/disinfect/images/bg1.jpg');
+  /* background-image: url('../images/news/zt2020/2020wuhan/disinfect/images/bg1.jpg'); */
   background-size: cover;
   background-position: center top;
-}
-
-.content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background-image: url('../images/news/zt2020/2020wuhan/disinfect/images/bg22.jpg');
-  background-size: cover;
-  background-position: center top;
-}
-
-.result {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background-image: url('../images/news/zt2020/2020wuhan/disinfect/images/bg3.jpg');
-  background-size: cover;
-  background-position: center top;
-}
-
-.question {
-  position: absolute;
-  width: 100%;
-  margin-left: 0%;
-  top: 0%;
-  z-index: 10;
 }
 
 .pp {
@@ -986,33 +964,19 @@ html {
 }
 
 .pr {
-  color: #135f43;
   line-height: 2.2rem;
-  text-align: left;
-  font-size: 1.6rem;
+  text-align: center;
+}
+
+.pr b {
+  font-size: 24px;
   font-weight: bold;
 }
 
 .ques_p {
-  line-height: 1.5em;
-  width: 75%;
   margin-left: 13%;
-  margin-top: 55%;
-  font-size: 2.3em;
-  color: #135f43;
-  height: 5.3em;
-  padding-top: 0.3em;
-  text-align: center;
-  font-weight: bold;
-  background-position: center 60%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-.ques_back {
-  position: absolute;
-  width: 100%;
-  z-index: -1;
+  margin-top: 53%;
+  height: 5em;
 }
 
 .ques_flag {
@@ -1024,11 +988,9 @@ html {
 
 .ques_p2 {
   line-height: 1.4em;
-  padding: 0 0.3em;
-  margin-top: 0.5em;
-  font-size: 2.4em;
-  color: #135f43;
-  text-align: center;
+  padding: 0 1em;
+  margin-top: 1em;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -1036,12 +998,8 @@ html {
   text-align: left;
 }
 
-.tip_btn {
-  color: #fff;
-}
-
 .re_p {
-  margin-top: 85%;
+  margin-top: 70%;
 }
 
 .fadeIn {
@@ -1056,23 +1014,18 @@ html {
   width: 100%;
 }
 
-.wel_btn {
-  z-index: 10000;
-}
-
 .re_btns {
-  bottom: 12%;
+  bottom: 25%;
 }
 
 .re_btn {
-  width: 30.3%;
-  margin-left: 13%;
-  margin-top: 1em;
-  background-color: #118b40;
+  width: 90%;
+  background-color: #002d69;
 }
 
-.re_btns .item p {
-  margin-top: 22.3%;
+.re_btns p {
+  margin-top: 20px;
+  font-size: 15px;
 }
 /*
 *  iphoneX pulic  css
