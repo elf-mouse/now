@@ -22,8 +22,16 @@ balm.config = {
       '@': path.resolve(__dirname, 'app/scripts'),
       zeptoSrc: 'zepto/src'
     }
+  },
+  assets: {
+    cache: true
   }
   // More Config
 };
 
-balm.go();
+balm.go(mix => {
+  if (mix.env.isProd) {
+    mix.remove('dist/rev-manifest.json');
+    mix.zip();
+  }
+});
