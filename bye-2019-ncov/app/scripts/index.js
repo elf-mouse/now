@@ -277,7 +277,13 @@ function ajax(url, success) {
   xhr.send();
 }
 
-// let url = '/data/wuhan2020.json'; // local
-let url = '/now/bye-2019-ncov/dist/data/wuhan2020.json'; // test
+let url = '/data/wuhan2020.json'; // local
+// let url = '/now/bye-2019-ncov/dist/data/wuhan2020.json'; // test
 // let url = '/antiviral/2020index/data/wuhan2020.json'; // yiban
-ajax(url, wuhan2020);
+ajax(url, data => {
+  $('.wel_btn')
+    .removeClass('loading')
+    .find('span')
+    .text('开始测试');
+  wuhan2020(data);
+});

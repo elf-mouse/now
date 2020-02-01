@@ -258,9 +258,35 @@ body {
   background-color: #ffe400;
   color: black;
   border-radius: 60px;
-  font-weight: bold;
-  font-size: 24px;
   border: 0;
+  text-align: center;
+  line-height: 50px;
+  overflow: hidden;
+
+  &.loading {
+    background-color: #cdcdcd;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    content: '';
+    background-color: #ffe400;
+    border-radius: 60px;
+    animation: loading 2s ease forwards;
+  }
+
+  & span {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 24px;
+  }
 }
 
 .logo {
@@ -627,26 +653,6 @@ body {
   transform: perspective(1px) scale3d(1, 1, 1);
 }
 
-@-webkit-keyframes fly_in {
-  0% {
-    -webkit-transform: translateX(400px);
-  }
-
-  100% {
-    -webkit-transform: translateX(0);
-  }
-}
-
-@-moz-keyframes fly_in {
-  0% {
-    -moz-transform: translateX(400px);
-  }
-
-  100% {
-    -moz-transform: translateX(0);
-  }
-}
-
 @keyframes fly_in {
   0% {
     transform: translateX(400px);
@@ -654,34 +660,6 @@ body {
 
   100% {
     transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes fly {
-  0% {
-    -webkit-transform: translateY(0%);
-  }
-
-  50% {
-    -webkit-transform: translateY(10%);
-  }
-
-  100% {
-    -webkit-transform: translateY(0%);
-  }
-}
-
-@-moz-keyframes fly {
-  0% {
-    -moz-transform: translateY(0%);
-  }
-
-  50% {
-    -moz-transform: translateY(10%);
-  }
-
-  100% {
-    -moz-transform: translateY(0%);
   }
 }
 
@@ -699,34 +677,6 @@ body {
   }
 }
 
-@-webkit-keyframes flow1 {
-  0% {
-    -webkit-transform: translateX(35%);
-  }
-
-  50% {
-    -webkit-transform: translateX(-35%);
-  }
-
-  100% {
-    -webkit-transform: translateX(35%);
-  }
-}
-
-@-moz-keyframes flow1 {
-  0% {
-    -moz-transform: translateX(35%);
-  }
-
-  50% {
-    -moz-transform: translateX(-35%);
-  }
-
-  100% {
-    -moz-transform: translateX(35%);
-  }
-}
-
 @keyframes flow1 {
   0% {
     transform: translateX(35%);
@@ -738,42 +688,6 @@ body {
 
   100% {
     transform: translateX(35%);
-  }
-}
-
-@-webkit-keyframes flow2 {
-  0% {
-    -webkit-transform: translateX(-7%);
-  }
-
-  30% {
-    -webkit-transform: translateX(35%);
-  }
-
-  80% {
-    -webkit-transform: translateX(-35%);
-  }
-
-  100% {
-    -webkit-transform: translateX(-7%);
-  }
-}
-
-@-moz-keyframes flow2 {
-  0% {
-    -moz-transform: translateX(-7%);
-  }
-
-  30% {
-    -moz-transform: translateX(35%);
-  }
-
-  80% {
-    -moz-transform: translateX(-35%);
-  }
-
-  100% {
-    -moz-transform: translateX(-7%);
   }
 }
 
@@ -795,42 +709,6 @@ body {
   }
 }
 
-@-webkit-keyframes flow3 {
-  0% {
-    -webkit-transform: translateX(-7%);
-  }
-
-  20% {
-    -webkit-transform: translateX(-35%);
-  }
-
-  70% {
-    -webkit-transform: translateX(35%);
-  }
-
-  100% {
-    -webkit-transform: translateX(-7%);
-  }
-}
-
-@-moz-keyframes flow3 {
-  0% {
-    -moz-transform: translateX(-7%);
-  }
-
-  20% {
-    -moz-transform: translateX(-35%);
-  }
-
-  70% {
-    -moz-transform: translateX(35%);
-  }
-
-  100% {
-    -moz-transform: translateX(-7%);
-  }
-}
-
 @keyframes flow3 {
   0% {
     transform: translateX(-7%);
@@ -849,26 +727,6 @@ body {
   }
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -876,26 +734,6 @@ body {
 
   100% {
     opacity: 0.6;
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 0.6;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes fadeOut {
-  0% {
-    opacity: 0.6;
-  }
-
-  100% {
-    opacity: 0;
   }
 }
 
@@ -909,26 +747,6 @@ body {
   }
 }
 
-@-webkit-keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes fade {
   0% {
     opacity: 0;
@@ -936,6 +754,15 @@ body {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 
