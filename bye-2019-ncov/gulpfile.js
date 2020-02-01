@@ -31,6 +31,7 @@ balm.config = {
 
 balm.go(mix => {
   if (mix.env.isProd) {
+    mix.copy('app/data/*', 'dist/data');
     mix.remove('dist/rev-manifest.json');
     mix.zip();
   }
