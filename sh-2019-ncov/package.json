@@ -1,0 +1,20 @@
+{
+  "name": "sh-2019-ncov",
+  "version": "1.0.0",
+  "description": "上海 2019-nCoV 疫情分布",
+  "author": "Elf-mousE <ifmouz@gmail.com>",
+  "scripts": {
+    "dev": "gulp -S",
+    "prod": "gulp -S -p"
+  },
+  "dependencies": {
+    "echarts": "^4.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "balm": "^2.4.0",
+    "eslint": "^6.8.0",
+    "gulp": "^4.0.2"
+  },
+  "private": true
+}
