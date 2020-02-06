@@ -19,4 +19,8 @@ balm.config = {
   // More Config
 };
 
-balm.go();
+balm.go(mix => {
+  if (mix.env.isProd) {
+    mix.copy('app/data/*', 'dist/data');
+  }
+});
