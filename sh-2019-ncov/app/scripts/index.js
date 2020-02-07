@@ -3,10 +3,11 @@ import 'echarts/map/js/province/shanghai';
 // import data from '../data/wuhan2020.json';
 
 function wuhan2020(data) {
+  let total = data.map(item => item.value).reduce((acc, cur) => acc + cur);
   let option = {
     title: {
       text: '上海 2019-nCoV 疫情分布',
-      subtext: '数据来自“上海发布”（注：仅包含本市常住人口168例）'
+      subtext: `数据来自“上海发布”（注：仅包含本市常住人口${total}例）`
     },
     tooltip: {
       trigger: 'item',
