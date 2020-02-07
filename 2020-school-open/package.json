@@ -1,0 +1,17 @@
+{
+  "name": "2020-school-open",
+  "version": "1.0.0",
+  "description": "2020 高校开学时间一览",
+  "author": "Elf-mousE <ifmouz@gmail.com>",
+  "scripts": {
+    "dev": "gulp -S",
+    "prod": "gulp -S -p"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "balm": "^2.4.0",
+    "eslint": "^6.8.0",
+    "gulp": "^4.0.2"
+  },
+  "private": true
+}
