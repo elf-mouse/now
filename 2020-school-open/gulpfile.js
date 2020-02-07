@@ -22,5 +22,7 @@ balm.config = {
 balm.go(mix => {
   if (mix.env.isProd) {
     mix.copy('app/data/*', 'dist/data');
+    mix.zip('dist/*', '.', 'client.zip');
+    mix.zip('server/*', '.', 'server.zip');
   }
 });
