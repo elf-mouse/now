@@ -2,10 +2,10 @@
   {
     "keyword": "%0:school1%",
     "name": "school1",
-    "time": "2020-2-1",
+    "time": "2020-02-01",
     "url": "#1",
     "notice": {
-      "time": "2020-2-1",
+      "time": "2020-02-01",
       "title": "title1",
       "content": "content1",
       "source": "source1"
@@ -14,10 +14,10 @@
   {
     "keyword": "%1:school2%",
     "name": "school2",
-    "time": "2020-2-1",
+    "time": "2020-02-01",
     "url": "#2",
     "notice": {
-      "time": "2020-2-1",
+      "time": "2020-02-01",
       "title": "title2",
       "content": "content2",
       "source": "source2"
@@ -26,10 +26,10 @@
   {
     "keyword": "%2:school3%",
     "name": "school3",
-    "time": "2020-2-1",
+    "time": "2020-02-01",
     "url": "#3",
     "notice": {
-      "time": "2020-2-1",
+      "time": "2020-02-01",
       "title": "title3",
       "content": "content3",
       "source": "source3"
