@@ -24,8 +24,9 @@ balm.config = {
 
 balm.go(mix => {
   if (mix.env.isProd) {
-    // mix.copy('app/data/*', 'dist/data'); // For test
-    mix.zip('dist/*', '.', 'client.zip');
+    mix.copy('app/data/*', 'dist/data');
+    mix.remove('dist/rev-manifest.json');
+    mix.zip('dist/**/*', '.', 'client.zip');
     mix.zip('server/*', '.', 'server.zip');
   }
 });
