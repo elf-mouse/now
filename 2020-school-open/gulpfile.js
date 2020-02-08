@@ -15,13 +15,16 @@ balm.config = {
     alias: {
       '@': path.resolve(__dirname, 'app/scripts')
     }
+  },
+  assets: {
+    cache: true
   }
   // More Config
 };
 
 balm.go(mix => {
   if (mix.env.isProd) {
-    mix.copy('app/data/*', 'dist/data');
+    // mix.copy('app/data/*', 'dist/data'); // For test
     mix.zip('dist/*', '.', 'client.zip');
     mix.zip('server/*', '.', 'server.zip');
   }
