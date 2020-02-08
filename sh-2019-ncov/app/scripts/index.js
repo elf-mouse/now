@@ -2,12 +2,12 @@ import echarts from 'echarts';
 import 'echarts/map/js/province/shanghai';
 // import data from '../data/wuhan2020.json';
 
-function wuhan2020(data) {
+function wuhan2020({ upToNow, data }) {
   let total = data.map(item => item.value).reduce((acc, cur) => acc + cur);
   let option = {
     title: {
       text: '上海 2019-nCoV 疫情分布',
-      subtext: `数据来自“上海发布”（注：仅包含本市常住人口${total}例）`
+      subtext: `截至${upToNow} | 来源“上海发布”（仅含常住人口${total}例）`
     },
     tooltip: {
       trigger: 'item',
@@ -15,7 +15,7 @@ function wuhan2020(data) {
     },
     visualMap: {
       min: 0,
-      max: 50,
+      max: data[0].value + 10,
       text: ['高', '低'],
       realtime: false,
       calculable: true,
@@ -55,6 +55,6 @@ function ajax(url, success) {
   xhr.send();
 }
 
-// let url = '/data/wuhan2020.json'; // local
-let url = '/now/sh-2019-ncov/dist/data/wuhan2020.json'; // remote
+let url = '/data/wuhan2020.json'; // local
+// let url = '/now/sh-2019-ncov/dist/data/wuhan2020.json'; // remote
 ajax(url, wuhan2020);
