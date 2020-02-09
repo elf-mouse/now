@@ -30,19 +30,20 @@ workbook.xlsx
           }
           if (colNumber === 2 || colNumber === 3) {
             let date = new Date(value);
+            if (!isNaN(date)) {
+              let year = date.getFullYear();
+              let month = date.getMonth() + 1;
+              let day = date.getDate();
 
-            let year = date.getFullYear();
-            let month = date.getMonth() + 1;
-            let day = date.getDate();
+              if (month < 10) {
+                month = `0${month}`;
+              }
+              if (day < 10) {
+                day = `0${day}`;
+              }
 
-            if (month < 10) {
-              month = `0${month}`;
+              value = `${year}-${month}-${day}`;
             }
-            if (day < 10) {
-              day = `0${day}`;
-            }
-
-            value = `${year}-${month}-${day}`;
           }
 
           switch (colNumber) {
