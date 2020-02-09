@@ -1,21 +1,47 @@
 {
-  "upToNow": "2020.2.8 24时",
+  "upToNow": "2020.2.9 12时",
   "data": [
-    { "district": "黄浦区", "confirmed": 5, "healing": 1 },
-    { "district": "徐汇区", "confirmed": 16, "healing": 1 },
-    { "district": "长宁区", "confirmed": 11, "healing": 1 },
-    { "district": "静安区", "confirmed": 16, "healing": 3 },
-    { "district": "普陀区", "confirmed": 8, "healing": 0 },
-    { "district": "虹口区", "confirmed": 7, "healing": 1 },
-    { "district": "杨浦区", "confirmed": 7, "healing": 0 },
-    { "district": "闵行区", "confirmed": 14, "healing": 2 },
-    { "district": "宝山区", "confirmed": 17, "healing": 0 },
-    { "district": "嘉定区", "confirmed": 6, "healing": 1 },
-    { "district": "浦东新区", "confirmed": 56, "healing": 8 },
-    { "district": "金山区", "confirmed": 2, "healing": 0 },
-    { "district": "松江区", "confirmed": 14, "healing": 0 },
-    { "district": "青浦区", "confirmed": 5, "healing": 2 },
-    { "district": "奉贤区", "confirmed": 9, "healing": 1 },
-    { "district": "崇明区", "confirmed": 2, "healing": 0 }
+    { "name": "黄浦区", "value": 5 },
+    { "name": "徐汇区", "value": 16 },
+    { "name": "长宁区", "value": 11 },
+    { "name": "静安区", "value": 16 },
+    { "name": "普陀区", "value": 8 },
+    { "name": "虹口区", "value": 7 },
+    { "name": "杨浦区", "value": 7 },
+    { "name": "闵行区", "value": 14 },
+    { "name": "宝山区", "value": 17 },
+    { "name": "嘉定区", "value": 7 },
+    { "name": "浦东新区", "value": 56 },
+    { "name": "金山区", "value": 2 },
+    { "name": "松江区", "value": 14 },
+    { "name": "青浦区", "value": 5 },
+    { "name": "奉贤区", "value": 9 },
+    { "name": "崇明区", "value": 2 }
+  ],
+  "distribution": [
+    {
+      "name": "疑似病例",
+      "value": 236
+    },
+    {
+      "name": "病情平稳",
+      "value": 228
+    },
+    {
+      "name": "病情危重",
+      "value": 10
+    },
+    {
+      "name": "重症",
+      "value": 10
+    },
+    {
+      "name": "治愈出院",
+      "value": 44
+    },
+    {
+      "name": "死亡",
+      "value": 1
+    }
   ]
 }

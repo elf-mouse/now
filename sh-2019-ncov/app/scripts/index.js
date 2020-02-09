@@ -2,28 +2,22 @@ import echarts from 'echarts';
 import 'echarts/map/js/province/shanghai';
 // import data from '../data/wuhan2020.json';
 
-function wuhan2020({ upToNow, data }) {
-  let max = 0;
-  data = data.map(item => {
-    if (item.confirmed > max) {
-      max = item.confirmed;
-    }
+let state = false;
+const button = document.getElementById('switch');
 
-    return {
-      name: item.district,
-      value: item.confirmed
-    };
-  });
+const showDistrict = (myChart, { upToNow, data }) => {
+  button.textContent = '状态分布';
+  const total = data.map(item => item.value).reduce((acc, cur) => acc + cur);
+  const max = Math.max(...data.map(item => item.value));
 
-  let total = data.map(item => item.value).reduce((acc, cur) => acc + cur);
   let option = {
     title: {
-      text: '上海 2019-nCoV 疫情分布',
+      text: '上海 2019-nCoV 疫情区域分布',
       subtext: `截至${upToNow} | 来源“上海发布”（仅含常住人口${total}例）`
     },
     tooltip: {
       trigger: 'item',
-      formatter: '{b}<br/>确诊病例：{c}'
+      formatter: `{b}<br>确诊病例：{c}`
     },
     visualMap: {
       min: 0,
@@ -51,8 +45,94 @@ function wuhan2020({ upToNow, data }) {
     ]
   };
 
-  const myChart = echarts.init(document.getElementById('app'));
   myChart.setOption(option);
+};
+
+const showStatus = (myChart, { upToNow, distribution }) => {
+  button.textContent = '区域分布';
+
+  let data = distribution;
+  const total1 = data
+    .slice(0, 1)
+    .map(item => item.value)
+    .reduce((acc, cur) => acc + cur);
+  const total2 = data
+    .slice(1)
+    .map(item => item.value)
+    .reduce((acc, cur) => acc + cur);
+  let option = {
+    title: {
+      text: '上海 2019-nCoV 疫情状态分布',
+      subtext: `截至${upToNow} | 来源“上海发布”`
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: '{b}：{d}%'
+    },
+    legend: {
+      orient: 'vertical',
+      bottom: 10,
+      left: 10,
+      data: data.map(item => item.name)
+    },
+    series: [
+      {
+        type: 'pie',
+        radius: '40%',
+        center: ['50%', '40%'],
+        label: {
+          position: 'inner'
+        },
+        labelLine: {
+          show: false
+        },
+        data: [
+          { value: total1, name: '疑似病例' },
+          { value: total2, name: '确诊病例' }
+        ]
+      },
+      {
+        type: 'pie',
+        radius: ['60%', '90%'],
+        center: ['50%', '40%'],
+        label: false,
+        data
+      }
+    ],
+    color: [
+      '#ff961e',
+      '#f06061',
+      '#ffd2a0',
+      '#c91014',
+      '#9c0a0d',
+      '#65b379',
+      '#87878b'
+    ]
+  };
+
+  myChart.setOption(option);
+};
+
+function wuhan2020(data) {
+  const myChart = echarts.init(document.getElementById('app'));
+
+  button.addEventListener('click', () => {
+    state = !state;
+
+    myChart.clear();
+
+    if (state) {
+      showDistrict(myChart, data);
+    } else {
+      showStatus(myChart, data);
+    }
+  });
+
+  if (state) {
+    showDistrict(myChart, data);
+  } else {
+    showStatus(myChart, data);
+  }
 }
 
 function ajax(url, success) {
@@ -67,6 +147,6 @@ function ajax(url, success) {
   xhr.send();
 }
 
-// let url = '/data/wuhan2020.json'; // local
-let url = '/now/sh-2019-ncov/dist/data/wuhan2020.json'; // remote
+let url = '/data/wuhan2020.json'; // local
+// let url = '/now/sh-2019-ncov/dist/data/wuhan2020.json'; // remote
 ajax(url, wuhan2020);
