@@ -1,21 +1,21 @@
 {
-  "upToNow": "2020.2.8 12时",
+  "upToNow": "2020.2.8 24时",
   "data": [
-    { "name": "浦东新区", "value": 53 },
-    { "name": "宝山区", "value": 17 },
-    { "name": "徐汇区", "value": 16 },
-    { "name": "静安区", "value": 15 },
-    { "name": "闵行区", "value": 14 },
-    { "name": "松江区", "value": 14 },
-    { "name": "长宁区", "value": 11 },
-    { "name": "奉贤区", "value": 9 },
-    { "name": "普陀区", "value": 7 },
-    { "name": "虹口区", "value": 7 },
-    { "name": "杨浦区", "value": 7 },
-    { "name": "嘉定区", "value": 6 },
-    { "name": "黄浦区", "value": 5 },
-    { "name": "青浦区", "value": 5 },
-    { "name": "金山区", "value": 2 },
-    { "name": "崇明区", "value": 2 }
+    { "district": "黄浦区", "confirmed": 5, "healing": 1 },
+    { "district": "徐汇区", "confirmed": 16, "healing": 1 },
+    { "district": "长宁区", "confirmed": 11, "healing": 1 },
+    { "district": "静安区", "confirmed": 16, "healing": 3 },
+    { "district": "普陀区", "confirmed": 8, "healing": 0 },
+    { "district": "虹口区", "confirmed": 7, "healing": 1 },
+    { "district": "杨浦区", "confirmed": 7, "healing": 0 },
+    { "district": "闵行区", "confirmed": 14, "healing": 2 },
+    { "district": "宝山区", "confirmed": 17, "healing": 0 },
+    { "district": "嘉定区", "confirmed": 6, "healing": 1 },
+    { "district": "浦东新区", "confirmed": 56, "healing": 8 },
+    { "district": "金山区", "confirmed": 2, "healing": 0 },
+    { "district": "松江区", "confirmed": 14, "healing": 0 },
+    { "district": "青浦区", "confirmed": 5, "healing": 2 },
+    { "district": "奉贤区", "confirmed": 9, "healing": 1 },
+    { "district": "崇明区", "confirmed": 2, "healing": 0 }
   ]
 }
