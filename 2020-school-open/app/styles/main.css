@@ -41,7 +41,7 @@ a {
 
 .search-box {
   position: sticky;
-  height: 105px;
+  height: 120px;
   padding: 18px 12px;
   background: white;
   border-radius: 5px;
@@ -98,16 +98,10 @@ a {
 
 .result {
   font-size: 14px;
+  line-height: 1;
 
-  & > div {
-    display: inline-block;
-    width: calc(98% - 150px);
-    vertical-align: top;
-    line-height: 1;
-  }
-
-  & > div:last-child {
-    width: 150px;
+  & > div:first-child {
+    margin-bottom: 10px;
   }
 }
 

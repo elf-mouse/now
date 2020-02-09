@@ -31,7 +31,7 @@ function ajax(url, success) {
   xhr.send();
 }
 
-// let url = '/data/wuhan2020.json'; // local
+let url = '/data/wuhan2020.json'; // local
 // let url = '/now/2020-school-open/dist/data/wuhan2020.json'; // test
-let url = '/schoolopens/2020index/data/wuhan2020.json'; // yiban
+// let url = '/schoolopens/2020index/data/wuhan2020.json'; // yiban
 ajax(url, wuhan2020);

@@ -5,10 +5,8 @@ const noticeListEl = document.querySelector('.notice-list');
 
 const renderResult = data => {
   resultEl.innerHTML = data
-    ? `<div>
-    <span class="school-name">${data.name}</span></div>
-    <div>/ <span class="school-time">${data.time}</span> / <a href="${data.url}">查看详情</a>
-  </div>`
+    ? `<div><span class="school-name">${data.name}</span></div>
+  <div><span class="school-time">${data.time}</span> / <a href="${data.url}">查看详情</a></div>`
     : noResultMessage;
 };
 
