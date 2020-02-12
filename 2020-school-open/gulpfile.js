@@ -27,6 +27,6 @@ balm.go(mix => {
     mix.copy('app/data/*', 'dist/data');
     mix.remove('dist/rev-manifest.json');
     mix.zip('dist/**/*', '.', 'client.zip');
-    mix.zip('server/*', '.', 'server.zip');
+    mix.zip(['server/package.json', 'server/index.js'], '.', 'server.zip');
   }
 });
