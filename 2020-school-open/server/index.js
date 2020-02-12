@@ -28,6 +28,10 @@ workbook.xlsx
           if (value.richText) {
             value = value.richText.text;
           }
+          if (value.hyperlink) {
+            value = value.text;
+          }
+
           if (colNumber === 2 || colNumber === 3) {
             let date = new Date(value);
             if (!isNaN(date)) {
@@ -77,7 +81,7 @@ workbook.xlsx
     });
 
     // Test
-    // console.log(data.slice(3));
+    // console.log(data.slice(0, 3));
 
     // Output
     fs.writeFile(output, JSON.stringify(data), function(err) {
