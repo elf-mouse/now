@@ -52,6 +52,7 @@ const showStatus = (myChart, { upToNow, distribution }) => {
   button.textContent = '区域分布';
 
   let data = distribution;
+
   const total1 = data
     .slice(0, 1)
     .map(item => item.value)
@@ -60,6 +61,8 @@ const showStatus = (myChart, { upToNow, distribution }) => {
     .slice(1)
     .map(item => item.value)
     .reduce((acc, cur) => acc + cur);
+  const itemNames = data.map(item => item.name);
+
   let option = {
     title: {
       text: '上海 2019-nCoV 疫情状态分布',
@@ -73,7 +76,36 @@ const showStatus = (myChart, { upToNow, distribution }) => {
       orient: 'vertical',
       bottom: 10,
       left: 10,
-      data: data.map(item => item.name)
+      selectedMode: false,
+      // data: data.map(item => item.name),
+      formatter: function(name) {
+        let label = '';
+
+        switch (name) {
+          case itemNames[0]:
+            label = `${name}：${data[0].value}`;
+            break;
+          case itemNames[1]:
+            label = `${name}：${data[1].value}`;
+            break;
+          case itemNames[2]:
+            label = `${name}：${data[2].value}`;
+            break;
+          case itemNames[3]:
+            label = `${name}：${data[3].value}`;
+            break;
+          case itemNames[4]:
+            label = `${name}：${data[4].value}`;
+            break;
+          case itemNames[5]:
+            label = `${name}：${data[5].value}`;
+            break;
+          case '确诊病例':
+            label = `${name}：${total2}`;
+            break;
+        }
+        return label;
+      }
     },
     series: [
       {
