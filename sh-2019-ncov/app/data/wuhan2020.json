@@ -1,5 +1,5 @@
 {
-  "upToNow": "2020.2.19 24时",
+  "upToNow": "2020.2.20 12时",
   "data": [
     { "name": "黄浦区", "value": 6 },
     { "name": "徐汇区", "value": 18 },
@@ -8,7 +8,7 @@
     { "name": "普陀区", "value": 11 },
     { "name": "虹口区", "value": 7 },
     { "name": "杨浦区", "value": 9 },
-    { "name": "闵行区", "value": 18 },
+    { "name": "闵行区", "value": 19 },
     { "name": "宝山区", "value": 21 },
     { "name": "嘉定区", "value": 9 },
     { "name": "浦东新区", "value": 60 },
@@ -21,11 +21,11 @@
   "distribution": [
     {
       "name": "疑似病例",
-      "value": 115
+      "value": 105
     },
     {
       "name": "病情平稳",
-      "value": 128
+      "value": 118
     },
     {
       "name": "病情危重",
@@ -33,11 +33,11 @@
     },
     {
       "name": "重症",
-      "value": 4
+      "value": 2
     },
     {
       "name": "治愈出院",
-      "value": 186
+      "value": 199
     },
     {
       "name": "死亡",
