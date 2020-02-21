@@ -1,5 +1,5 @@
 {
-  "upToNow": "2020.2.20 24时",
+  "upToNow": "2020.2.21 12时",
   "data": [
     { "name": "黄浦区", "value": 6 },
     { "name": "徐汇区", "value": 18 },
@@ -21,15 +21,15 @@
   "distribution": [
     {
       "name": "疑似病例",
-      "value": 107
+      "value": 105
     },
     {
       "name": "病情平稳",
-      "value": 118
+      "value": 107
     },
     {
       "name": "病情危重",
-      "value": 12
+      "value": 11
     },
     {
       "name": "重症",
@@ -37,7 +37,7 @@
     },
     {
       "name": "治愈出院",
-      "value": 199
+      "value": 211
     },
     {
       "name": "死亡",
